@@ -10,14 +10,14 @@ import { authorize } from "../../middleware/authorize";
 
 const router = Router();
 
-router.post("/request-writer", [authenticate], requestWriterRole);
+router.post("/requestWriter", [authenticate], requestWriterRole);
 router.get(
-  "/role-requests",
+  "/roleRequests",
   [authenticate, authorize(["ADMIN"])],
   viewRoleRequests
 );
 router.post(
-  "/role-requests/:id",
+  "/roleRequests/:id",
   [authenticate, authorize(["ADMIN"])],
   updateRoleRequest
 );
